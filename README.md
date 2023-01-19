@@ -47,3 +47,5 @@ python manage.py migrate
 ```
 python manage.py runserver
 ```
+### Автор: [Иван Филиппов](https://www.linkedin.com/in/iffilippov/) <img src="https://github.com/blackcater/blackcater/raw/main/images/Hi.gif" width="50" height="50"/>
+### Студент Яндекс Практикум. Стучусь в дверь IT. Россия, Севастополь
