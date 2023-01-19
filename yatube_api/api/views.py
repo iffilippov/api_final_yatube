@@ -22,9 +22,6 @@ class PostsViewsSet(viewsets.ModelViewSet):
     def perform_create(self, serializer):
         serializer.save(author=self.request.user)
 
-    def perform_update(self, serializer):
-        serializer.save(author=self.request.user)
-
 
 class GroupsViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Group.objects.all()
@@ -53,11 +50,7 @@ class CommentsViewSet(viewsets.ModelViewSet):
         return self.get_post().comments
 
     def perform_create(self, serializer):
-        post = self.get_post()
-        serializer.save(author=self.request.user, post=post)
-
-    def perform_update(self, serializer):
-        serializer.save(author=self.request.user)
+        serializer.save(author=self.request.user, post=self.get_post())
 
 
 class FollowViewSet(mixins.ListModelMixin,
